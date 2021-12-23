@@ -25,6 +25,7 @@ include device/nvidia/shield-common/shield.mk
 TARGET_REFERENCE_DEVICE ?= icosa
 TARGET_TEGRA_VARIANT    ?= common
 
+TARGET_TEGRA_APTX     ?= true
 TARGET_TEGRA_AUDIO    ?= nvaudio
 TARGET_TEGRA_CEC      ?= icosa
 TARGET_TEGRA_KERNEL   ?= 49
