@@ -46,6 +46,12 @@ KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE 	:= kernel/nvidia/linux-4.9_icosa/kernel/kernel-4.9
 TARGET_KERNEL_CONFIG    := tegra_android_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.gz
+
+# Maru additional kernel configs
+ifneq ($(MARU_VERSION),)
+TARGET_KERNEL_CONFIG := tegra_android_maru_defconfig
+endif
+
 else
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
 endif

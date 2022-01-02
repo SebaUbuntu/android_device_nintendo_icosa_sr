@@ -14,7 +14,17 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_icosa_sr.mk \
-    $(LOCAL_DIR)/lineage_icosa_sr.mk \
-    $(LOCAL_DIR)/maru_icosa_sr.mk
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+
+# Inherit device configuration for icosa_sr.
+include device/nintendo/icosa_sr/lineage.mk
+$(call inherit-product, device/nintendo/icosa_sr/full_icosa_sr.mk)
+
+# Inherit Maru vendor stuff
+$(call inherit-product, vendor/switchroot/device-maru.mk)
+
+PRODUCT_NAME := maru_icosa_sr
+PRODUCT_DEVICE := icosa_sr
+MARU_VERSION := 0.8
+MARU_BUILD_VERSION := $(MARU_VERSION)-$(shell date -u +%Y%m%d)

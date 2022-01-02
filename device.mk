@@ -182,3 +182,10 @@ PRODUCT_PACKAGES += \
 # Shieldtech OSS override
 PRODUCT_PACKAGES += \
     vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service
+
+# Maru OS Configuration
+ifneq ($(MARU_VERSION),)
+# Maru OS init import
+PRODUCT_PACKAGES += \
+    maru_import.rc
+endif
