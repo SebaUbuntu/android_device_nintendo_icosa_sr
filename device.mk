@@ -27,7 +27,7 @@ TARGET_TEGRA_VARIANT    ?= common
 
 TARGET_TEGRA_AUDIO    ?= nvaudio
 TARGET_TEGRA_CAMERA   ?= nvcamera
-TARGET_TEGRA_CEC      ?= nvhdmi
+TARGET_TEGRA_CEC      ?= icosa
 TARGET_TEGRA_KERNEL   ?= 49
 TARGET_TEGRA_KEYSTORE ?= nvkeystore
 TARGET_TEGRA_MEMTRACK ?= nvmemtrack
@@ -178,6 +178,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wifi_reset \
     wifi_scan_config.conf
+
+# CEC
+PRODUCT_PACKAGES += \
+    android.hardware.tv.cec@1.0-service-icosa \
+    android.hardware.tv.cec@1.0-impl-icosa
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
 # Shieldtech OSS override
 PRODUCT_PACKAGES += \
