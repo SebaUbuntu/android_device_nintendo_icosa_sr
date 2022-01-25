@@ -167,13 +167,8 @@ do_insmod /vendor/lib/modules/si2168.ko
 do_insmod /vendor/lib/modules/si2157.ko
 do_insmod /vendor/lib/modules/lgdt3305.ko
 do_insmod /vendor/lib/modules/tda18272.ko
-do_insmod /vendor/lib/modules/em28xx.ko
-do_insmod /vendor/lib/modules/em28xx-dvb.ko
-do_insmod /vendor/lib/modules/em28xx-rc.ko
 do_insmod /vendor/lib/modules/cx25840.ko
 do_insmod /vendor/lib/modules/cx2341x.ko
-do_insmod /vendor/lib/modules/cx231xx.ko
-do_insmod /vendor/lib/modules/cx231xx-dvb.ko
 /vendor/bin/log -t "$scriptName" -p i "Early loading ODM TV tuner modules completed"
 
 /vendor/bin/log -t "$scriptName" -p i "Early Loading LKM Board-ODM modules completed"
