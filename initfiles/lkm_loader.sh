@@ -168,6 +168,11 @@ do_insmod /vendor/lib/modules/ina3221.ko
 do_insmod /vendor/lib/modules/gpio_timed_keys.ko
 /vendor/bin/log -t "$scriptName" -p i "Loading vendor gpio timed keys module for early mode completed"
 # TV tuner drivers
+em28xx.ko
+em28xx-dvb.ko
+em28xx-rc.ko
+cx231xx.ko
+cx231xx-dvb.ko
 do_insmod /vendor/lib/modules/lgdt3306a.ko
 do_insmod /vendor/lib/modules/si2168.ko
 do_insmod /vendor/lib/modules/si2157.ko
