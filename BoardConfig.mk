@@ -57,7 +57,6 @@ endif
 
 # Recovery
 TARGET_RECOVERY_FSTAB        := device/nintendo/icosa_sr/initfiles/fstab.icosa_recovery
-BOARD_SUPPRESS_EMMC_WIPE     := true
 TARGET_RECOVERY_UPDATER_LIBS := librecoveryupdater_tegra
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 
