@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_SHIELDTECH_INPUTFLINGER := switchroot
+#TARGET_SHIELDTECH_INPUTFLINGER := switchroot
 TARGET_SWITCH_VARIANT ?= erista
 
 # Properties
@@ -186,8 +186,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
 # Shieldtech OSS override
-PRODUCT_PACKAGES += \
-    vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service
+#PRODUCT_PACKAGES += \
+#    vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service
 
 # Maru OS Configuration
 ifneq ($(MARU_VERSION),)
