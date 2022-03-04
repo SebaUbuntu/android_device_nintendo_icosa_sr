@@ -165,7 +165,7 @@ public class DockService extends Service {
                                 final Point displaySize = new Point();
 
                                 for (int i = 0; i < displays.length; i++)
-                                    Log.e(TAG, "Display idx: " + String.valueOf(i) + " id: " + String.valueOf(displays[i].getDisplayId()));
+                                    Log.i(TAG, "Display idx: " + String.valueOf(i) + " id: " + String.valueOf(displays[i].getDisplayId()));
 
                                 // Preserve user/default set built-in display resolution.
                                 mWindowManager.getBaseDisplaySize(0, displaySize);
@@ -183,6 +183,7 @@ public class DockService extends Service {
                                 mWindowManager.setForcedDisplayDensityForUser(externalDisplayId, 160, UserHandle.USER_CURRENT);
                             }
                         } else {
+                            Log.i(TAG, "HDMI disconnected");
                             if (mExternalDisplayConnected) {
                                 if (isTv) {
                                     // Restore default resolution and density for built-in display
