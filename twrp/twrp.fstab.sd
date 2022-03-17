@@ -1,14 +1,28 @@
-/recovery       emmc            /dev/block/platform/sdhci-tegra.0/by-name/SOS
-/boot           emmc            /dev/block/platform/sdhci-tegra.0/by-name/LNX
-/system_root    ext4            /dev/block/platform/sdhci-tegra.0/by-name/APP
-/system_image   emmc            /dev/block/platform/sdhci-tegra.0/by-name/APP
-/cache          ext4            /dev/block/platform/sdhci-tegra.0/by-name/CAC
-/vendor         ext4            /dev/block/platform/sdhci-tegra.0/by-name/vendor
-/vendor_image   emmc            /dev/block/platform/sdhci-tegra.0/by-name/vendor
-/misc           emmc            /dev/block/platform/sdhci-tegra.0/by-name/MSC
-/staging        emmc            /dev/block/platform/sdhci-tegra.0/by-name/USP
-/metadata       emmc            /dev/block/platform/sdhci-tegra.0/by-name/MDA
-/data           ext4            /dev/block/platform/sdhci-tegra.0/by-name/UDA			 flags=encryptable=/dev/block/platform/sdhci-tegra.0/by-name/MDA
-/bmps           emmc            /dev/block/platform/sdhci-tegra.0/by-name/IMG
-/usb-otg        vfat            /dev/block/sda1	  /dev/block/sda				 flags=removable;storage;display=USB-OTG
-/external_sd    vfat            /dev/block/platform/sdhci-tegra.0/mmcblk0p1			 flags=display="Micro SDcard";storage;removable
+# icosa sd twrp fstab
+
+#<src>                                                 <mnt_point>            <type>    <mnt_flags and options>                                                                          <fs_mgr_flags>
+# System partitions
+/dev/block/platform/sdhci-tegra.0/by-name/APP           /system                 ext4    ro,barrier=1,discard                                                                            wait,slotselect,wipeingui
+/dev/block/platform/sdhci-tegra.0/by-name/APP           /system_image           emmc    ro,barrier=1,discard                                                                            wait,slotselect
+/dev/block/platform/sdhci-tegra.0/by-name/SOS           /recovery               emmc    ro,barrier=1,discard                                                                            wait,slotselect
+/dev/block/platform/sdhci-tegra.0/by-name/vendor        /vendor                 ext4    ro,barrier=1,discard                                                                            wait,slotselect,wipeingui
+/dev/block/platform/sdhci-tegra.0/by-name/vendor        /vendor_image           emmc    ro,barrier=1,discard                                                                            wait,slotselect
+
+# Other partitions
+/dev/block/platform/sdhci-tegra.0/by-name/LNX           /boot                   emmc    defaults                                                                                        wait,slotselect
+/dev/block/platform/sdhci-tegra.0/by-name/CAC           /cache                  ext4    defaults                                                                                        wait,slotselect
+/dev/block/platform/sdhci-tegra.0/by-name/USP           /staging                emmc    defaults                                                                                        wait,slotselect
+/dev/block/platform/sdhci-tegra.0/by-name/IMG           /bmps                   emmc    defaults                                                                                        wait,slotselect
+
+# Userdata partition
+/dev/block/platform/sdhci-tegra.0/by-name/UDA           /data                  ext4    encryptable=/dev/block/platform/sdhci-tegra.0/by-name/MDA
+/dev/block/platform/sdhci-tegra.0/by-name/MDA           /metadata              emmc    defaults
+
+# External devices
+/dev/block/sda1	  /dev/block/sda                        /usb-otg               vfat    removable,storage,display=USB-OTG
+/dev/block/platform/sdhci-tegra.0/mmcblk0p1             /external_sd           vfat    display="Micro SDcard",storage,removable
+
+# Need to have this entry in here even though the mount point itself is no longer needed.
+# The update_engine code looks for this entry in order to determine the boot device address
+# and fails if it does not find it.
+/dev/block/platform/sdhci-tegra.0/by-name/MSC           /misc                  emmc    defaults                                                                    
