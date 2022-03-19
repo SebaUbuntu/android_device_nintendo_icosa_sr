@@ -27,7 +27,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE        := fstab.icosa
 LOCAL_MODULE_CLASS  := ETC
-LOCAL_SRC_FILES     := fstab.icosa
+LOCAL_SRC_FILES     := fstab.icosa_sd
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
@@ -50,7 +50,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE               := init.icosa.rc
 LOCAL_MODULE_CLASS         := ETC
-LOCAL_SRC_FILES            := init.icosa.rc
+LOCAL_SRC_FILES            := init.icosa_sd.rc
 LOCAL_VENDOR_MODULE        := true
 LOCAL_MODULE_RELATIVE_PATH := init/hw
 include $(BUILD_PREBUILT)
