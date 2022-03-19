@@ -97,6 +97,10 @@ on post-fs-data
 
     chmod 0444 /sys/devices/platform/tegra-fuse/aid
 
+    restorecon_recursive /mnt/vendor/factory
+    mount vfat /dev/block/platform/sdhci-tegra.0/by-name/hos_data /mnt/vendor/factory rw noatime
+    start vendor.jc_setup
+
 on boot
     # CPU and GPU governor scaling settings
     write /sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us 0
