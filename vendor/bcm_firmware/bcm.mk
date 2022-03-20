@@ -22,4 +22,4 @@ PRODUCT_PACKAGES += \
 	BCM4356A3 \
     brcmfmac4356-pcie \
 	brcmfmac4356-pcie.clm_blob \
-	brcmfmac4356-pcie.txt
+	brcmfmac4356-pcie.nintendo,icosa.txt
