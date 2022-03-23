@@ -22,15 +22,15 @@ LOCAL_SRC_FILES     := audio_effects.xml
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
+ifneq ($(PRODUCT_IS_ATV),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE        := audio_policy_configuration.xml
 LOCAL_MODULE_TAGS   := optional
 LOCAL_MODULE_CLASS  := ETC
-ifneq ($(PRODUCT_IS_ATV),true)
 LOCAL_SRC_FILES     := audio_policy_configuration_nv_nodolby.xml
-endif
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE        := nvaudio_conf.xml
