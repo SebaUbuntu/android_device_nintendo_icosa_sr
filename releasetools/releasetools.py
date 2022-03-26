@@ -34,7 +34,7 @@ MODE_UNFUSED        = '0x00000000\n'
 MODE_FUSED          = '0x00000001\n'
 
 ICOSA_PUBLIC_KEY    = '0x7e39e100d1135918ceedfe5d66e66496eed21ecb3486d72095cc0b7c60b8bd4f\n'
-ICOSA_BL_VERSION    = '2020.04-26-g53ff5d2195-593ce326-rev5'  # $u-boot_revision-$coreboot_hash-$scrrev
+ICOSA_BL_VERSION    = '2020.04-03753-g53ff5d2195-rev5'  # See ver_simple in boot.scr
 
 def FullOTA_PostValidate(info):
   if 'INSTALL/bin/resize2fs_static' in info.input_zip.namelist():
@@ -87,8 +87,7 @@ def AddBootloaderFlash(info, input_zip):
   info.script.AppendExtra('            (')
   info.script.AppendExtra('              ui_print("Flashing updated bootloader for fused " + getprop(ro.hardware));')
   info.script.AppendExtra('              package_extract_file("firmware-update/coreboot.rom", "' + ICOSA_FILES + 'coreboot.rom");')
-  info.script.AppendExtra('              package_extract_file("firmware-update/common.scr", "' + ICOSA_FILES + 'common.scr");')
-  info.script.AppendExtra('              package_extract_file("firmware-update/" + getprop(ro.hardware) + ".scr", "' + ICOSA_FILES + 'boot.scr");')
+  info.script.AppendExtra('              package_extract_file("firmware-update/boot.scr", "' + ICOSA_FILES + 'boot.scr");')
   info.script.AppendExtra('              package_extract_file("firmware-update/bootlogo_android.bmp", "' + ICOSA_FILES + 'bootlogo_android.bmp");')
   info.script.AppendExtra('              package_extract_file("firmware-update/icon_android_hue.bmp", "' + ICOSA_FILES + 'icon_android_hue.bmp");')
   info.script.AppendExtra('              package_extract_file("firmware-update/00-android.ini", "' + ICOSA_BL_CONFIG + '00-android.ini");')
