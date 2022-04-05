@@ -169,6 +169,11 @@ service vendor.sensors_calib /vendor/bin/sensors_calib.sh /mnt/vendor/factory/sw
     disabled
     oneshot
 
+# Override and disable adbenable because it is not needed on icosa
+service adb_enable /vendor/bin/adbenable.sh
+    override
+    disabled
+
 # Reset FB to workaround SLD coldboot issues
 on property:init.svc.bootanim=running 
     write /sys/class/graphics/fb0/blank 1

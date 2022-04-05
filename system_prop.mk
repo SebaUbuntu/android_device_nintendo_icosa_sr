@@ -23,3 +23,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi.one_touch_play_on_home=0 \
     persist.sys.hdmi.keep_awake=0 \
     ro.hdmi.wake_on_hotplug=1
+
+# USB & ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.usb.configfs=1 \
+    vendor.config.usb=adb
