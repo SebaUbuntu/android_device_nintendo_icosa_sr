@@ -13,7 +13,7 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
-ICOSA_FIRMWARE_PATH := ../../../../../vendor/switchroot/firmware
+ICOSA_FIRMWARE_PATH := ../../../../../vendor/firmware/icosa
 
 include $(CLEAR_VARS)
 LOCAL_MODULE               := reboot_payload
