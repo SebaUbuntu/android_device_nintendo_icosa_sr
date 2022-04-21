@@ -20,9 +20,7 @@ $(call inherit-product, device/nvidia/shield-common/vendor/shield-by-flags.mk)
 
 PRODUCT_PACKAGES += public.libraries
 
-# Switch reboot2payload hekate
-PRODUCT_PACKAGES += reboot_payload
-
-PRODUCT_PACKAGES += u-boot-sr.bin \
-					mkimage \
-					boot.scr
+# Firmware
+PRODUCT_PACKAGES += \
+	reboot_payload \
+	boot.scr

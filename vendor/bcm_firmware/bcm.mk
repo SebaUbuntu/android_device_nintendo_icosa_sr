@@ -15,11 +15,8 @@
 LOCAL_PATH := device/nintendo/icosa_sr/vendor/bcm_firmware
 COMMON_BCM_PATH := device/nvidia/tegra-common/vendor/bcm_firmware
 
-$(call inherit-product, $(COMMON_BCM_PATH)/bcm4354/device-bcm.mk)
-
 PRODUCT_PACKAGES += \
-    bcm4356 \
 	BCM4356A3 \
-    brcmfmac4356-pcie \
+	brcmfmac4356-pcie \
 	brcmfmac4356-pcie.clm_blob \
 	brcmfmac4356-pcie.nintendo,icosa.txt
