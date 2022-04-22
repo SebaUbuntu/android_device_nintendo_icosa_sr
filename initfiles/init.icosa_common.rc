@@ -48,6 +48,8 @@ on init
     setprop ro.hardware.sensors stmicro
     setprop sys.io.scheduler deadline
 
+    setprop sys.usb.configfs 1
+
 on fs
     # Assuming system takes 1GB runtime RAM, dedeuct it from GPU comptag memory allocation
     write /sys/devices/57000000.gpu/comptag_mem_deduct 1024
