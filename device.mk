@@ -17,6 +17,9 @@
 #TARGET_SHIELDTECH_INPUTFLINGER := switchroot
 TARGET_SWITCH_VARIANT ?= erista
 
+# API level 29
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
+
 # Properties
 include $(LOCAL_PATH)/system_prop.mk
 include $(LOCAL_PATH)/vendor_prop.mk
