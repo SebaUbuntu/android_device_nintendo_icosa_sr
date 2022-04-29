@@ -105,7 +105,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Device Settings
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     DeviceSettingsSR
 
 # Joycons
