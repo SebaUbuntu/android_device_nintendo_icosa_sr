@@ -48,6 +48,9 @@ on init
     setprop ro.hardware.sensors stmicro
     setprop sys.io.scheduler deadline
 
+    # Workaround broke HWC rotation
+    setprop ro.surface_flinger.primary_display_orientation ORIENTATION_270
+
     setprop sys.usb.configfs 1
 
 on fs
@@ -98,6 +101,10 @@ on post-fs-data
     chown system system /sys/devices/gpu.0/slcg_enable
 
     chmod 0444 /sys/devices/platform/tegra-fuse/aid
+
+    # Set compositor policy for HWC
+    setprop vendor.tegra.composite.policy composite-yuv
+    setprop vendor.tegra.composite.range Auto
 
     restorecon_recursive /mnt/vendor/factory
     mount vfat /dev/block/platform/sdhci-tegra.0/by-name/hos_data /mnt/vendor/factory rw noatime
