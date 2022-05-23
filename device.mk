@@ -188,6 +188,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
 
+# Keylayout
+PRODUCT_PACKAGES += \
+    gpio-keys.kl
+
 # Shieldtech OSS override
 #PRODUCT_PACKAGES += \
 #    vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service
