@@ -27,21 +27,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE        := fstab.icosa
 LOCAL_MODULE_CLASS  := ETC
-LOCAL_SRC_FILES     := fstab.icosa_sd
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE        := fstab.icosa_emmc
-LOCAL_MODULE_CLASS  := ETC
-LOCAL_SRC_FILES     := fstab.icosa_emmc
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE        := fstab.icosa_recovery
-LOCAL_MODULE_CLASS  := ETC
-LOCAL_SRC_FILES     := fstab.icosa_recovery
+LOCAL_SRC_FILES     := fstab.icosa
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 

@@ -57,7 +57,7 @@ TARGET_KERNEL_CONFIG := tegra_android_maru_defconfig
 endif
 
 # Recovery
-TARGET_RECOVERY_FSTAB        := device/nintendo/icosa_sr/initfiles/fstab.icosa_recovery
+TARGET_RECOVERY_FSTAB        := device/nintendo/icosa_sr/initfiles/fstab.icosa
 TARGET_RECOVERY_UPDATER_LIBS := librecoveryupdater_tegra
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 

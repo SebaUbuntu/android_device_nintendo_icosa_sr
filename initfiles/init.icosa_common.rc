@@ -54,6 +54,9 @@ on init
     setprop sys.usb.configfs 1
 
 on fs
+    mount_all /vendor/etc/fstab.icosa
+    swapon_all /vendor/etc/fstab.icosa
+
     # Assuming system takes 1GB runtime RAM, dedeuct it from GPU comptag memory allocation
     write /sys/devices/57000000.gpu/comptag_mem_deduct 1024
 

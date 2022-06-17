@@ -13,7 +13,3 @@
 # limitations under the License.
 
 import /vendor/etc/init/hw/init.icosa_common.rc
-
-on fs
-    mount_all /vendor/etc/fstab.icosa
-    swapon_all /vendor/etc/fstab.icosa
